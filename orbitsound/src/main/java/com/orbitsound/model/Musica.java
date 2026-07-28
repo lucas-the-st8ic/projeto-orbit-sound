@@ -18,6 +18,14 @@ public class Musica {
 
     @ManyToOne
     private Artista artista;
+    public Musica() {
+
+    }
+
+    public Musica(String nomeMusica) {
+        this.nomeDaMusica = nomeMusica;
+    }
+
 
     @Override
     public String toString(){

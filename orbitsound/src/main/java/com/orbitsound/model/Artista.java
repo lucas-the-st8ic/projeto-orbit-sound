@@ -26,6 +26,12 @@ public class Artista {
     @OneToMany(mappedBy = "artista")
     private List<Musica> musicasDoArtista = new ArrayList<>();
 
+    public Artista() {}
+
+    public Artista(String nome, TipoArtista tipo) {
+        this.nome = nome;
+        this.tipoArtista = tipo;
+    }
 
     @Override
     public String toString() {
@@ -34,4 +40,5 @@ public class Artista {
                 "Tipo: " + this.tipoArtista+"\n" +
                 "Musicas: " + musicasDoArtista;
     }
+
 }
