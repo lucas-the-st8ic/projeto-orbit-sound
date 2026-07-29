@@ -91,6 +91,8 @@ public class Main {
     }
 
     private void cadastrarMusicas() {
+        var continuarCadastrandoMusicas = "S";
+
         System.out.print("Cadastrar música de qual artista? ");
         var nome = input.nextLine();
         Optional<Artista> artista = repository.findByNomeContainingIgnoreCase(nome);
@@ -99,6 +101,7 @@ public class Main {
             var nomeMusica = input.nextLine();
             Musica musica = new Musica(nomeMusica);
             musica.setArtista(artista.get());
+            artista.get().getMusicasDoArtista().add(musica);
             repository.save(artista.get());
         } else {
             System.out.println("Artista não encontrado!!");

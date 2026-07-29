@@ -30,7 +30,6 @@ public class Musica {
     @Override
     public String toString(){
         return
-                "Música: " + nomeDaMusica + "\n" +
-                "Artista: " + artista;
+                "Música: " + nomeDaMusica + "\n";
     }
 }
