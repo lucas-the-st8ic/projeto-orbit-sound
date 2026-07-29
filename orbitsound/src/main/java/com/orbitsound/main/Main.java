@@ -110,11 +110,21 @@ public class Main {
 
     private void listarMusicas() {
         List<Artista> artistas = repository.findAll();
-        artistas.forEach(System.out::println);
+        artistas.forEach(a -> {
+            System.out.println("Artista: " + a.getNome());
+            a.getMusicasDoArtista().forEach(System.out::print);
+            System.out.println("\n---------------------------");
+        } );
         
     }
 
     private void buscarMusicasPorArtista() {
+        System.out.print("Escolha um artista para buscar as músicas: ");
+        var nome = input.nextLine();
+        List<Musica> musicas = repository.buscarMusicasPorArtista(nome);
+        System.out.println("Artista: " +nome);
+        musicas.forEach(System.out::println);
+        System.out.println("------------------------");
     }
 
     private void pesquisarSobreUmArtista() {

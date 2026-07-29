@@ -18,6 +18,7 @@ public class Musica {
 
     @ManyToOne
     private Artista artista;
+
     public Musica() {
 
     }
@@ -30,6 +31,7 @@ public class Musica {
     @Override
     public String toString(){
         return
-                "Música: " + nomeDaMusica + "\n";
+
+                "\nMúsica: " + nomeDaMusica;
     }
 }
