@@ -4,6 +4,7 @@ import com.orbitsound.model.Artista;
 import com.orbitsound.model.Musica;
 import com.orbitsound.model.TipoArtista;
 import com.orbitsound.repository.ArtistaRepository;
+import com.orbitsound.service.ConsultaGeminiAI;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
@@ -128,5 +129,11 @@ public class Main {
     }
 
     private void pesquisarSobreUmArtista() {
+    System.out.print("Pesquisar dados de qual Artista? ");
+    var artista = input.nextLine();
+    input.nextLine();
+    var resposta = ConsultaGeminiAI.obterInformacao(artista);
+        System.out.println(resposta.trim());
+
     }
 }
